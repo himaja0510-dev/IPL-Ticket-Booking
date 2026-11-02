@@ -1,0 +1,115 @@
+
+/* 1. CSS Variables */
+:root {
+    --primary: #10264d;
+    --accent: #e6a817;
+    --background: #f2f4f8;
+    --text: #222222;
+}
+
+/* 2. Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* Prevent fixed navigation from covering the page */
+body {
+    padding-top: 60px;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* 3. Hero Section */
+#home,
+.hero {
+    background: linear-gradient(120deg, #10264d, #d99a16);
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+}
+
+#home a,
+.hero a {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--primary);
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#home a:hover,
+.hero a:hover {
+    background-color: white;
+}
+
+/* 4. Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #cccccc;
+}
+
+th {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* 4. Cards */
+article, aside {
+    padding: 18px;
+    margin: 15px 0;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Forms */
+form {
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Footer */
+footer {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
