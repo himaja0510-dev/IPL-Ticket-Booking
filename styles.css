@@ -113,3 +113,14 @@ footer {
     margin-top: 20px;
     border-radius: 5px;
 }
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e293b;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
