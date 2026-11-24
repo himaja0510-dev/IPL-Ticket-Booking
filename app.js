@@ -26,3 +26,118 @@ bookButtons.forEach(function (button) {
     button.addEventListener("click", scrollToBooking);
 });
 
+
+
+// Live Booking Summary
+
+
+
+const matchSelect = document.getElementById("match");
+const standSelect = document.getElementById("stand");
+const quantityInput = document.getElementById("quantity");
+
+
+
+const summaryMatch = document.querySelector("#summaryMatch");
+const summaryStand = document.querySelector("#summaryStand");
+const summaryPrice = document.querySelector("#summaryPrice");
+const summaryQuantity = document.querySelector("#summaryQuantity");
+const summaryTotal = document.querySelector("#summaryTotal");
+
+
+
+const ticketPrices = {
+    "RCB vs CSK": {
+        General: 800,
+        Premium: 1500,
+        VIP: 3000
+    },
+
+    "MI vs KKR": {
+        General: 900,
+        Premium: 1800,
+        VIP: 3500
+    },
+
+    "SRH vs CSK": {
+        General: 700,
+        Premium: 1400,
+        VIP: 2800
+    }
+};
+
+
+
+function updateBookingSummary(showNotification = true) {
+
+    const selectedMatch = matchSelect.value;
+    const selectedStand = standSelect.value;
+
+    const quantity = Number(quantityInput.value);
+
+    
+
+    const validQuantity =
+        Number.isInteger(quantity) &&
+        quantity >= 1 &&
+        quantity <= 10;
+
+    
+
+    let price = 0;
+
+    if (
+        selectedMatch &&
+        selectedStand &&
+        ticketPrices[selectedMatch]
+    ) {
+        price = ticketPrices[selectedMatch][selectedStand];
+    }
+
+    
+
+    const total = validQuantity ? price * quantity : 0;
+
+    
+
+    summaryMatch.textContent = selectedMatch || "Not Selected";
+
+    summaryStand.textContent = selectedStand || "Not Selected";
+
+    summaryPrice.textContent =
+        "₹" + price.toLocaleString("en-IN");
+
+    summaryQuantity.textContent =
+        validQuantity ? quantity : 0;
+
+    summaryTotal.textContent =
+        "₹" + total.toLocaleString("en-IN");
+
+    
+
+    if (showNotification) {
+        showToast("Booking Summary Updated!");
+    }
+}
+
+
+
+matchSelect.addEventListener("change", function () {
+    updateBookingSummary();
+});
+
+
+
+standSelect.addEventListener("change", function () {
+    updateBookingSummary();
+});
+
+
+
+quantityInput.addEventListener("input", function () {
+    updateBookingSummary(false);
+});
+
+quantityInput.addEventListener("change", function () {
+    updateBookingSummary();
+});

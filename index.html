@@ -174,9 +174,9 @@
             <label for="match">Select Match:</label>
             <select id="match" name="match" required>
                 <option value="">Choose Match</option>
-                <option>RCB vs CSK</option>
-                <option>MI vs KKR</option>
-                <option>SRH vs CSK</option>
+                <option value="RCB vs CSK">RCB vs CSK</option>
+                <option value="MI vs KKR">MI vs KKR</option>
+                <option value="SRH vs CSK">SRH vs CSK</option>
             </select>
 
             <br><br>
@@ -184,16 +184,16 @@
             <label for="stand">Stand Category:</label>
             <select id="stand" name="stand" required>
                 <option value="">Select Stand</option>
-                <option>General</option>
-                <option>Premium</option>
-                <option>VIP</option>
+                <option value="General">General</option>
+                <option value="Premium">Premium</option>
+                <option value="VIP">VIP</option>
             </select>
 
             <br><br>
 
             <label for="quantity">Number of Tickets:</label>
             <input type="number" id="quantity" name="quantity"
-                   min="1" max="10" required>
+                    min="1" max="10" value="1" required>
 
             <br><br>
 
@@ -220,17 +220,22 @@
         </form>
 
         <!-- Booking Summary -->
-        <aside>
+        
+<aside>
 
-            <h3>Booking Summary</h3>
+    <h3>Booking Summary</h3>
 
-            <p>Selected Match: Not Selected</p>
-            <p>Stand Category: Not Selected</p>
-            <p>Ticket Price: ₹0</p>
-            <p>Quantity: 0</p>
-            <h3>Total Amount: ₹0</h3>
+    <p>Selected Match: <span id="summaryMatch">Not Selected</span></p>
 
-        </aside>
+    <p>Stand Category: <span id="summaryStand">Not Selected</span></p>
+
+    <p>Ticket Price: <span id="summaryPrice">₹0</span></p>
+
+    <p>Quantity: <span id="summaryQuantity">0</span></p>
+
+    <h3>Total Amount: <span id="summaryTotal">₹0</span></h3>
+
+</aside>
 
     </section>
 
