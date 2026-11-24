@@ -141,3 +141,71 @@ quantityInput.addEventListener("input", function () {
 quantityInput.addEventListener("change", function () {
     updateBookingSummary();
 });
+
+
+
+
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+menuToggle.addEventListener("click", function () {
+
+    mainNav.classList.toggle("active");
+
+    const isOpen = mainNav.classList.contains("active");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+});
+
+
+
+
+const teamFilter = document.getElementById("teamFilter");
+const matchCards = document.querySelectorAll(".match-card");
+
+teamFilter.addEventListener("change", function () {
+
+    const selectedTeam = teamFilter.value;
+
+    matchCards.forEach(function (card) {
+
+        const teams = card.dataset.teams.split(" ");
+
+        if (selectedTeam === "all" || teams.includes(selectedTeam)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    showToast("Match Filter Updated!");
+
+});
+
+
+
+
+const gridViewButton = document.getElementById("gridView");
+const listViewButton = document.getElementById("listView");
+const matchGrid = document.getElementById("matchGrid");
+
+
+gridViewButton.addEventListener("click", function () {
+
+    matchGrid.classList.remove("list-view");
+
+    showToast("Grid View Selected!");
+
+});
+
+
+listViewButton.addEventListener("click", function () {
+
+    matchGrid.classList.add("list-view");
+
+    showToast("List View Selected!");
+
+});
+

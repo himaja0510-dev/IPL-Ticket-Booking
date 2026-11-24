@@ -14,20 +14,31 @@
 <body>
 
     <!-- Navigation Bar -->
-    <header>
+    
 
-        <h1>IPL 2026 Ticket Booking</h1>
+<header class="site-header">
 
-        <nav>
-            <ul>
-                <li><a href="#matches">Matches</a></li>
-                <li><a href="#booking">My Bookings</a></li>
-                <li><a href="booking.html">Book Ticket</a></li>
-                <li><a href="#guidelines">Guidelines</a></li>
-            </ul>
-        </nav>
+    <h1>IPL 2026 Ticket Booking</h1>
 
-    </header>
+    
+    <button type="button" id="menuToggle"
+            class="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="#matches">Matches</a></li>
+            <li><a href="#booking">My Bookings</a></li>
+            <li><a href="booking.html">Book Ticket</a></li>
+            <li><a href="#guidelines">Guidelines</a></li>
+        </ul>
+    </nav>
+
+</header>
+
 
 
     <!-- Hero Section -->
@@ -106,60 +117,57 @@
             <option value="SRH">Sunrisers Hyderabad</option>
         </select>
 
-        <table border="1">
+        
+<div class="view-controls">
 
-            <thead>
-                <tr>
-                    <th>Match Number</th>
-                    <th>Teams</th>
-                    <th>Date & Time</th>
-                    <th>Venue</th>
-                    <th>General</th>
-                    <th>Premium</th>
-                    <th>VIP</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+    <button type="button" id="gridView">Grid View</button>
 
-            <tbody>
+    <button type="button" id="listView">List View</button>
 
-                <tr>
-                    <td>1</td>
-                    <td>RCB vs CSK</td>
-                    <td>10 May 2026, 7:30 PM</td>
-                    <td>Bengaluru</td>
-                    <td>₹800</td>
-                    <td>₹1500</td>
-                    <td>₹3000</td>
-                    <td><button type="button" class="book-btn">Book</button></td>
+</div>
 
-                </tr>
+        
+<!-- Match Cards -->
+<div class="match-grid" id="matchGrid">
 
-                <tr>
-                    <td>2</td>
-                    <td>MI vs KKR</td>
-                    <td>11 May 2026, 7:30 PM</td>
-                    <td>Mumbai</td>
-                    <td>₹900</td>
-                    <td>₹1800</td>
-                    <td>₹3500</td>
-                    <td><button type="button" class="book-btn">Book</button></td>
-                </tr>
+    
+    <article class="match-card" data-teams="RCB CSK">
+        <h3>Match 1</h3>
+        <h2>RCB vs CSK</h2>
+        <p><strong>Date:</strong> 10 May 2026, 7:30 PM</p>
+        <p><strong>Venue:</strong> Bengaluru</p>
+        <p>General: ₹800</p>
+        <p>Premium: ₹1500</p>
+        <p>VIP: ₹3000</p>
+        <button type="button" class="book-btn">Book</button>
+    </article>
 
-                <tr>
-                    <td>3</td>
-                    <td>SRH vs CSK</td>
-                    <td>12 May 2026, 7:30 PM</td>
-                    <td>Hyderabad</td>
-                    <td>₹700</td>
-                    <td>₹1400</td>
-                    <td>₹2800</td>
-                    <td><button type="button" class="book-btn">Book</button></td>
-                </tr>
+    
+    <article class="match-card" data-teams="MI KKR">
+        <h3>Match 2</h3>
+        <h2>MI vs KKR</h2>
+        <p><strong>Date:</strong> 11 May 2026, 7:30 PM</p>
+        <p><strong>Venue:</strong> Mumbai</p>
+        <p>General: ₹900</p>
+        <p>Premium: ₹1800</p>
+        <p>VIP: ₹3500</p>
+        <button type="button" class="book-btn">Book</button>
+    </article>
 
-            </tbody>
+    
+    <article class="match-card" data-teams="SRH CSK">
+        <h3>Match 3</h3>
+        <h2>SRH vs CSK</h2>
+        <p><strong>Date:</strong> 12 May 2026, 7:30 PM</p>
+        <p><strong>Venue:</strong> Hyderabad</p>
+        <p>General: ₹700</p>
+        <p>Premium: ₹1400</p>
+        <p>VIP: ₹2800</p>
+        <button type="button" class="book-btn">Book</button>
+    </article>
 
-        </table>
+</div>
+
 
     </section>
 
@@ -268,10 +276,13 @@
     </section>
 
 
-    <!-- Guidelines Section -->
-    <section id="guidelines">
+   
+<!-- Guidelines Section -->
+<section id="guidelines">
 
-        <h2>Ticket Booking Guidelines</h2>
+    <h2>Ticket Booking Guidelines</h2>
+
+    <div class="guidelines-grid">
 
         <article>
             <h3>Ticket Verification</h3>
@@ -288,7 +299,10 @@
             <p>Do not carry weapons, fireworks or restricted items into the stadium.</p>
         </article>
 
-    </section>
+    </div>
+
+</section>
+
 
 
     <!-- Footer -->
